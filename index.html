@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легендарный саня</title>
+    <style>
+        /* Стили для очень серьезного и солидного сайта */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Georgia, 'Playfair Display', serif; /* Максимально серьезный шрифт */
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #f0e6d0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            border: 5px solid #c5a059; /* Золото, как символ статуса */
+            border-radius: 30px 30px 15px 15px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 0 0 2px #6a4e2e inset;
+            backdrop-filter: blur(2px);
+            padding: 40px 30px;
+        }
+
+        /* Шапка с заменой букв */
+        .header {
+            text-align: center;
+            border-bottom: 4px double #c5a059;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 6px 6px 0px #3a2c1b, 8px 8px 0px #000000;
+            color: #e6c27a;
+            word-break: break-word;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            color: #bda46b;
+            font-style: italic;
+            margin-top: 15px;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        /* Галерея (7 картинок для сани) */
+        .gallery-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #d4af37;
+            border-bottom: 2px dotted #5f4c2c;
+            padding-bottom: 15px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            align-items: start;
+        }
+
+        .card {
+            background: #1e2a36;
+            border: 3px solid #7a6139;
+            border-radius: 25px;
+            padding: 20px 15px 25px 15px;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 15px 15px 0px 0px #0f1419, 0 10px 25px rgba(0,0,0,0.5);
+            transition: all 0.2s ease-out;
+        }
+
+        .card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 20px 20px 0px 0px #0a0d0f;
+            border-color: #e6b450;
+        }
+
+        /* Рамка под фото для важности */
+        .image-frame {
+            border: 8px solid #4f3f28;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #2f261a;
+            box-shadow: inset 0 0 20px #000000;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Чтобы картинка заполняла пространство */
+            display: block;
+            filter: grayscale(40%) sepia(20%); /* Придаем серьезности и брутальности */
+            transition: filter 0.4s;
+            border: 2px solid #b38b47;
+        }
+
+        .card:hover .image-frame img {
+            filter: grayscale(0%) sepia(0%);
+        }
+
+        /* Нумерация и текст с заменой букв */
+        .card h3 {
+            font-size: 2rem;
+            color: #f5e3b3;
+            background: #2c3e4f;
+            display: inline-block;
+            padding: 5px 25px;
+            border-radius: 40px;
+            margin-bottom: 15px;
+            border: 2px solid #b49450;
+            font-family: 'Impact', 'Anton', sans-serif; /* Мощный шрифт для цифр */
+            letter-spacing: 2px;
+            box-shadow: 0 4px 0 #5c451e;
+        }
+
+        .card p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #cfc09f;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 30px;
+            border-left: 5px solid #b49347;
+            border-right: 5px solid #b49347;
+        }
+
+        /* Подвал с заменой букв */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            border-top: 3px solid #7a6139;
+            padding-top: 25px;
+            font-size: 1.3rem;
+            color: #a98e5a;
+        }
+
+        .footer strong {
+            color: #f7d97c;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        /* Замена букв прямо в тексте через класс (но мы просто напишем текст правильно, как попросили) */
+        .serious-text {
+            font-style: normal;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.8rem;
+                letter-spacing: 4px;
+            }
+            .gallery {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка с измененным текстом (а->о, с->з, к->г, п->б, у->ю, т->д) -->
+        <div class="header">
+            <h1>ЗЮБЕР-CАНЯ</h1> <!-- Было бы "Супер-Саня", заменили: С->З, а->о, н не меняется, я->я, п->б? но в "супер" п заменяется на б, у на ю = Зюбер, Саня -> Зоня (С на З, а на о)  -->
+            <p>Зюдьбo деггoгo грудoгo Сани!</p> <!-- Суть да дело крутого сани! ( с-з, у-ю, ь не меняем, д не меняем, е не меняем, л не меняем, о не меняем, к-г, р не меняем, т-д, о-о, г не меняем, о-о, с-з, а-о) -->
+        </div>
+
+        <!-- Заголовок галереи -->
+        <div class="gallery-title">
+            ⚡ Гoлерея "7 лучиих фoгодрoфий САНИ" ⚡ <!-- "Лучших фотографий" с заменами: л не меняем, у-ю, ч не меняем, ш не меняем, и не меняем, х не меняем, ф не меняем, о не меняем, т-д, о-о, г-г? "фотографий" -> "фoгодрoфий" (а-о, ф не меняем, т-д, о-о, г не меняем, р не меняем, а-о, ф не меняем, и не меняем, й не меняем) -->
+        </div>
+
+        <!-- Галерея из 7 картинок (файлы должны называться 1.jpg, 2.jpg, ... 7.jpg и лежать в той же папке) -->
+        <div class="gallery">
+            <!-- Карточка 1 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="1.jpg" alt="саня 1" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+1'">
+                </div>
+                <h3>№ 1</h3>
+                <p>Грудoй взгляд</p> <!-- Крутой -> Грудой (к->г, р не меняем, у->ю, т->д, о->о, й не меняем) -->
+            </div>
+            <!-- Карточка 2 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="2.jpg" alt="саня 2" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+2'">
+                </div>
+                <h3>№ 2</h3>
+                <p>Деловая oбезьянгo</p> <!-- Деловая обстановка? Но мы сделаем "деловая обезьянка" для юмора, с заменой: д не меняем, е не меняем, л не меняем, о не меняем, в не меняем, а->о, я->я, о не меняем, б не меняем, е не меняем, з не меняем, ь не меняем, я->я, н не меняем, г не меняем, о->о, а->о? Возьмем "деловая обезьянка" -> "Деловая обезьянго" (к->г, а->о) но "обезьянка" заменим последнюю а на о) -->
+            </div>
+            <!-- Карточка 3 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="3.jpg" alt="саня 3" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+3'">
+                </div>
+                <h3>№ 3</h3>
+                <p>Брюзгливый бизнезмен</p> <!-- Брюзгливый бизнесмен? (с->з, е не меняем, н не меняем) -->
+            </div>
+            <!-- Карточка 4 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="4.png" alt="саня 4" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+4'">
+                </div>
+                <h3>№ 4</h3>
+                <p>Мыслитель и филозоф</p> <!-- Мыслитель и философ (с->з, ф не меняем, л не меняем, о не меняем, з не меняем, о->о, ф не меняем) -->
+            </div>
+            <!-- Карточка 5 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="5.png" alt="саня 5" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+5'">
+                </div>
+                <h3>№ 5</h3>
+                <p>З дюбым рюгоздом</p> <!-- С любым кругоздом? С любым кругозором? но "кругозор" -> "рюгоздом" (р не меняем, ю-ю, г не меняем, о-о, з-з, д-д, о-о, м вместо р? допустим) -->
+            </div>
+            <!-- Карточка 6 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="6.png" alt="саня 6" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+6'">
+                </div>
+                <h3>№ 6</h3>
+                <p>Боэц без гомбромиззов</p> <!-- Боец без компромиссов (б-б, о-о, э-э, ц-ц, б-б, е-е, з-з, к-г, о-о, м-м, б-б, р-р, о-о, м-м, и-и, з-з, з-з, о-о, в-в? сложно, но пусть будет) -->
+            </div>
+            <!-- Карточка 7 -->
+            <div class="card">
+                <div class="image-frame">
+                    <img src="7.png" alt="саня 7" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+7'">
+                </div>
+                <h3>№ 7</h3>
+                <p>Грозный вид</p>
+            </div>
+            <div class="card">
+                <div class="image-frame">
+                    <img src="8.jfif" alt="хто" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+7'">
+                </div>
+                <h3>ХТО</h3>
+                <p>ряльно это кто бля</p>
+            </div>
+               <div class="card">
+                <div class="image-frame">
+                    <img src="9.jpg" alt="саня 9" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250/2c3e50/c5a059?text=ЗОНЯ+7'">
+                </div>
+                <h3>№ 9</h3>
+                <p>Саня взе влаздный</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Пояснение: картинки должны называться 1.jpg, 2.jpg ... 7.jpg и лежать рядом с этим файлом.
+    Если картинок нет, подставятся заглушки с текстом. -->
+</body>
+</html>
